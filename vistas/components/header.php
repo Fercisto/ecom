@@ -22,44 +22,37 @@
             <nav class="limiter-menu-desktop container">
                 
                 <!-- Logo desktop -->		
-                <a href="#" class="logo">
+                <a href="index.php" class="logo">
                     <img src="../assets/images/icons/logo-01.png" alt="IMG-LOGO">
                 </a>
 
                 <!-- Menu desktop -->
                 <div class="menu-desktop">
                     <ul class="main-menu">
-                        <li class="active-menu">
-                            <a href="index.html">Home</a>
+                        <!-- class="active-menu" -->
+                        <li class="<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active-menu' : ''; ?>">
+                            <a href="index.php">Home</a>
                         </li>
-                        <li>
-                            <a href="product.html">Shop</a>
+                        <li class="<?php echo basename($_SERVER['PHP_SELF']) == 'product.php' ? 'active-menu' : ''; ?>">
+                            <a href="product.php">Shop</a>
                         </li>
-                        <li>
-                            <a href="blog.html">Blog</a>
+                        <li class="<?php echo basename($_SERVER['PHP_SELF']) == 'about.php' ? 'active-menu' : ''; ?>">
+                            <a href="about.php">About</a>
                         </li>
-                        <li>
-                            <a href="about.html">About</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">Contact</a>
+                        <li class="<?php echo basename($_SERVER['PHP_SELF']) == 'contact.php' ? 'active-menu' : ''; ?>">
+                            <a href="contact.php">Contact</a>
                         </li>
                     </ul>
                 </div>	
 
                 <!-- Icon header -->
                 <div class="wrap-icon-header flex-w flex-r-m">
-                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
-                        <i class="zmdi zmdi-search"></i>
-                    </div>
 
                     <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="2">
-                        <i class="zmdi zmdi-shopping-cart"></i>
+                        
+                        <a  style="text-decoration: none; color: inherit;" href="shoping-cart.php"><i class="zmdi zmdi-shopping-cart"></i></a>
                     </div>
 
-                    <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
-                        <i class="zmdi zmdi-favorite-outline"></i>
-                    </a>
                 </div>
             </nav>
         </div>	
@@ -74,17 +67,11 @@
 
         <!-- Icon header -->
         <div class="wrap-icon-header flex-w flex-r-m m-r-15">
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11">
-                <i class="zmdi zmdi-search"></i>
+
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="2">         
+                <a  style="text-decoration: none; color: inherit;" href="shoping-cart.php"><i class="zmdi zmdi-shopping-cart"></i></a>
             </div>
 
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="2">
-                <i class="zmdi zmdi-shopping-cart"></i>
-            </div>
-
-            <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
-                <i class="zmdi zmdi-favorite-outline"></i>
-            </a>
         </div>
 
         <!-- Button show menu -->
@@ -117,22 +104,10 @@
         <ul class="main-menu-m">
             <li>
                 <a href="index.html">Home</a>
-                <ul class="sub-menu-m">
-                    <li><a href="index.html">Homepage 1</a></li>
-                    <li><a href="home-02.html">Homepage 2</a></li>
-                    <li><a href="home-03.html">Homepage 3</a></li>
-                </ul>
-                <span class="arrow-main-menu-m">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                </span>
             </li>
 
             <li>
                 <a href="product.html">Shop</a>
-            </li>
-
-            <li>
-                <a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
             </li>
 
             <li>

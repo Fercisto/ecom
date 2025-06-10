@@ -129,16 +129,16 @@
     /*==================================================================
     [ Isotope ]*/
     var $topeContainer = $('.isotope-grid');
-    var $filter = $('.filter-tope-group');
+    // var $filter = $('.filter-tope-group');
 
-    // filter items on button click
-    $filter.each(function () {
-        $filter.on('click', 'button', function () {
-            var filterValue = $(this).attr('data-filter');
-            $topeContainer.isotope({filter: filterValue});
-        });
+    // // filter items on button click
+    // $filter.each(function () {
+    //     $filter.on('click', 'button', function () {
+    //         var filterValue = $(this).attr('data-filter');
+    //         $topeContainer.isotope({filter: filterValue});
+    //     });
         
-    });
+    // });
 
     // init Isotope
     $(window).on('load', function () {
