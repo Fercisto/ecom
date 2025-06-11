@@ -45,7 +45,7 @@
                 guardarLog($nombre, 'Fallo');
                 echo json_encode([
                     'success' => false,
-                    'message' => 'Acceso denegado' 
+                    'message' => 'Credenciales incorrectas, intente de nuevo' 
                 ]);
             }
         } else {

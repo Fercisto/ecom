@@ -21,14 +21,14 @@
         }
 
         public function create($data) {
-            $stmt = $this->conn->prepare("INSERT INTO usuarios (nombre, email, contrasena, telefono, direccion) VALUES (?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssss", $data['nombre'], $data['email'], $data['contrasena'], $data['telefono'], $data['direccion']);
+            $stmt = $this->conn->prepare("INSERT INTO usuarios (nombre, correo, contrasena, telefono, direccion) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssss", $data['nombre'], $data['correo'], $data['contrasena'], $data['telefono'], $data['direccion']);
             return $stmt->execute();
         }
 
         public function update($data) {
-            $stmt = $this->conn->prepare("UPDATE usuarios SET nombre=?, email=?, contrasena=?, telefono=?, direccion=? WHERE id_usuario=?");
-            $stmt->bind_param("sssssi", $data['nombre'], $data['email'], $data['contrasena'], $data['telefono'], $data['direccion'], $data['id_usuario']);
+            $stmt = $this->conn->prepare("UPDATE usuarios SET nombre=?, correo=?, contrasena=?, telefono=?, direccion=? WHERE id_usuario=?");
+            $stmt->bind_param("sssssi", $data['nombre'], $data['correo'], $data['contrasena'], $data['telefono'], $data['direccion'], $data['id_usuario']);
             return $stmt->execute();
         }
 

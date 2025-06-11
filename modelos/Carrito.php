@@ -1,6 +1,6 @@
 <?php
 
-    require_once('conexion.php');
+    require_once('../config/conexion.php');
 
     class Carrito {
 
@@ -33,7 +33,7 @@
         }
 
         public function delete($id) {
-            $stmt = $this->conn->prepare("DELETE FROM carrito WHERE id=?");
+            $stmt = $this->conn->prepare("DELETE FROM carrito WHERE id_carrito=?");
             $stmt->bind_param("i", $id);
             return $stmt->execute();
         }

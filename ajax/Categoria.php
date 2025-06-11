@@ -16,8 +16,9 @@ switch ($method) {
         echo json_encode(["success" => $categoria->update($data)]);
         break;
     case 'DELETE':
-        parse_str(file_get_contents('php://input'), $data);
-        echo json_encode(["success" => $categoria->delete($data["id_categoria"])]);
+        $data = json_decode(file_get_contents('php://input'), true);
+        $id = intval($data["id_categoria"]);
+        echo json_encode(["success" => $categoria->delete($id)]);
         break;
    
     default:

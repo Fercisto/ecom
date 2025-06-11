@@ -16,10 +16,10 @@ switch ($method) {
         echo json_encode(["success" => $producto->update($data)]);
         break;
     case 'DELETE':
-        parse_str(file_get_contents('php://input'), $data);
-        echo json_encode(["success" => $producto->delete($data["id_producto"])]);
+        $data = json_decode(file_get_contents('php://input'), true);
+        $id = intval($data["id_producto"]);
+        echo json_encode(["success" => $producto->delete($id)]);
         break;
-   
     default:
         http_response_code(405);
         echo json_encode(["error" => "Metodo no permitido", "message" => "ID no proporcionado"]);

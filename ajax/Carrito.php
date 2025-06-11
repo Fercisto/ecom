@@ -16,8 +16,9 @@ switch ($method) {
         echo json_encode(["success" => $carrito->update($data)]);
         break;
     case 'DELETE':
-        parse_str(file_get_contents('php://input'), $data);
-        echo json_encode(["success" => $carrito->delete($data["id"])]);
+        $data = json_decode(file_get_contents('php://input'), true);
+        $id = intval($data["id_carrito"]);
+        echo json_encode(["success" => $carrito->delete($id)]);
         break;
    
     default:

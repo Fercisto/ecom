@@ -1,5 +1,5 @@
 <?php
-require_once "../modelos/Detalle.php";
+require_once "../modelos/DetalleOrden.php";
 header("Content-Type: application/json");
 $detalle = new DetalleOrden();
 $method = $_SERVER["REQUEST_METHOD"];

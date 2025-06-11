@@ -16,8 +16,9 @@ switch ($method) {
         echo json_encode(["success" => $publico->update($data)]);
         break;
     case 'DELETE':
-        parse_str(file_get_contents('php://input'), $data);
-        echo json_encode(["success" => $publico->delete($data["id_publico"])]);
+        $data = json_decode(file_get_contents('php://input'), true);
+        $id = intval($data["id_publico"]);
+        echo json_encode(["success" => $publico->delete($id)]);
         break;
    
     default:

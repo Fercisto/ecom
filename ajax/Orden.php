@@ -16,8 +16,9 @@ switch ($method) {
         echo json_encode(["success" => $orden->update($data)]);
         break;
     case 'DELETE':
-        parse_str(file_get_contents('php://input'), $data);
-        echo json_encode(["success" => $orden->delete($data["id_orden"])]);
+        $data = json_decode(file_get_contents('php://input'), true);
+        $id = intval($data["id_orden"]);
+        echo json_encode(["success" => $orden->delete($id)]);
         break;
    
     default:
