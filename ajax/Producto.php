@@ -5,7 +5,12 @@ $producto = new Producto();
 $method = $_SERVER["REQUEST_METHOD"];
 switch ($method) {
     case 'GET':
-        echo json_encode($producto->getAll());
+        if (isset($_GET['id'])) {
+            $id = intval($_GET['id']);
+            echo json_encode($producto->getById($id));
+        } else {
+            echo json_encode($producto->getAll());
+        }
         break;
     case 'POST':
         $data = json_decode(file_get_contents('php://input'), true);

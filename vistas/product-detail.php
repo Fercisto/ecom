@@ -18,10 +18,7 @@
 </head>
 <body class="animsition">
 	
-	<?php
-		include_once 'components/header.php';
-	?>
-
+	<?php include_once 'components/header.php'; ?>
 
 	<!-- Product Detail -->
 	<section class="sec-product-detail bg0 p-t-65 p-b-60 m-t-40">
@@ -30,22 +27,22 @@
 				<div class="col-md-6 col-lg-7 p-b-30">
 					<div class="p-l-25 p-r-30 p-lr-0-lg">
 						<div class="wrap-pic-w pos-relative">
-							<img src="../assets/images/product-detail-01.jpg" alt="IMG-PRODUCT" class="w-100">
+							<img id="detalle-imagen" src="../assets/images/product-detail-01.jpg" alt="IMG-PRODUCT" class="w-100">
 						</div>
 					</div>
 				</div>
 					
 				<div class="col-md-6 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
-						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+						<h4 id="detalle-nombre" class="mtext-105 cl2 js-name-detail p-b-14">
 							Lightweight Jacket
 						</h4>
 
-						<span class="mtext-106 cl2">
+						<span id="detalle-precio" class="mtext-106 cl2">
 							$58.79
 						</span>
 
-						<p class="stext-102 cl3 p-t-23">
+						<p id="detalle-descripcion" class="stext-102 cl3 p-t-23">
 							Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
 						</p>
 						
@@ -92,12 +89,12 @@
 										<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
 											<i class="fs-16 zmdi zmdi-minus"></i>
 										</div>
-										<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
+										<input id="detail-qty" class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
 										<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
 											<i class="fs-16 zmdi zmdi-plus"></i>
 										</div>
 									</div>
-									<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+									<button class="btn-add-cart flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
 										Add to cart
 									</button>
 								</div>
@@ -132,31 +129,17 @@
 		</div>
 	</section>
 
-	<?php 
-		include_once 'components/footer.php'; 
-	?>
+	<?php include_once 'components/footer.php'; ?>
 
 	<!-- Scripts -->
 	<script src="../assets/vendor/select2/select2.min.js"></script>
+	<script src="js/Producto.js"></script>
 	<script>
 		$(".js-select2").each(function(){
 			$(this).select2({
 				minimumResultsForSearch: 20,
 				dropdownParent: $(this).next('.dropDownSelect2')
 			});
-		})
-	</script>
-	<script>
-		$('.js-addwish-detail').on('click', function(e){
-			e.preventDefault();
-			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-			alert(nameProduct + " is added to wishlist!");
-		});
-
-		$('.js-addcart-detail').on('click', function(e){
-			e.preventDefault();
-			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-			alert(nameProduct + " is added to cart!");
 		});
 	</script>
 

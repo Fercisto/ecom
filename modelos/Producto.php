@@ -20,7 +20,13 @@
             }
         }
 
-
+        public function getById($id) {
+            $stmt = $this->conn->prepare("SELECT * FROM productos WHERE id_producto = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_assoc(); 
+        }
 
         public function create($data) {
             $stmt = $this->conn->prepare("INSERT INTO productos (nombre_producto, descripcion, precio, stock, id_usuario, id_publico, descuento, id_categoria, publicidad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
